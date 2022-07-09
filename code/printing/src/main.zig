@@ -5,9 +5,15 @@
 const std = @import("std");
 
 /// 標準出力
+/// @line 文字列リテラルのみ
 fn println(line: []const u8) anyerror!void {
     const writer = std.io.getStdOut().writer();
     try writer.print("{s}\n", .{line});
+}
+
+fn println2(format: []const u8, args: anytype) anyerror!void {
+    const writer = std.io.getStdOut().writer();
+    try writer.print(format, .{args}); // これができない
 }
 
 /// エントリーポイント
@@ -45,6 +51,8 @@ pub fn main() anyerror!void {
         const value = 12.3456;
         std.log.info("{d}", .{value});
     }
+
+    // try println2("--- END ---", .{});
 }
 
 // 自動的に生成されたテストコード
