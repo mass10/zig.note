@@ -20,6 +20,7 @@ fn println2(format: []const u8, args: anytype) anyerror!void {
 pub fn main() anyerror!void {
 
     // 標準出力
+    // 標準出力関数は存在しない🔥
     const print = std.io.getStdOut().writer().print;
     try print("### START ###\n", .{});
 
@@ -33,6 +34,7 @@ pub fn main() anyerror!void {
 
     // 文字列？
     {
+        // const value: []const u8 = "コニチハ";
         const value = "コニチハ";
         std.log.info("{s}", .{value});
         std.log.info("{s}", .{@TypeOf(value)});
