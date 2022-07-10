@@ -14,6 +14,15 @@ pub fn main() anyerror!void {
         std.log.debug("list: {any}", .{list.items});
     }
 
+    // 文字列はどうやる？
+    // {
+    //     std.log.debug("========== ArrayList([]u8]) ==========", .{});
+    //     var list = std.ArrayList([]u8]).init(allocator);
+    //     defer list.deinit();
+    //     try list.append("");
+    //     std.log.debug("list: {any}", .{list.items});
+    // }
+
     {
         std.log.debug("========== ArrayList(f64) ==========", .{});
         var list = std.ArrayList(f64).init(allocator);
