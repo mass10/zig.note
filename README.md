@@ -1,15 +1,15 @@
 # ABOUT
 
-　Zig いろいろメモ。
+　Zig いろいろメモ。(2022-07-08)
 
-# Zig をセットアップする (2022-07-08)
+# 2022-07-08 Zig をセットアップする
 
 1. Zig をダウンロード (zip)
 2. どこかに配置
 3. PATH を通す
 
 
-# ZLS をビルドする for Windows (2022-07-10)
+# 2022-07-10 ZLS をビルドする for Windows
 
 ZLS for VSCode は、Zig Language Server のクライアントアプリケーションで、Zig Language Server がインストールされている必要がある。
 
@@ -38,7 +38,7 @@ zig-out\bin\zls.exe config
 }
 ```
 
-# Zig ファイルを直接実行できる！ (2022-07-10)
+# 2022-07-10 Zig ファイルを直接実行できる！
 
 　長いシェルは不の遺産。
 
