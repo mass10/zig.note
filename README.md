@@ -2,7 +2,7 @@
 
 　Zig いろいろメモ。
 
-# 2022-07-10 ZLS をビルドする (Windows)
+# ZLS をビルドする for Windows (2022-07-10)
 
 ZLS for VSCode は、Zig Language Server のクライアントアプリケーションで、Zig Language Server がインストールされている必要がある。
 
@@ -29,4 +29,12 @@ zig-out\bin\zls.exe config
     ...
     "zigLanguageClient.path": "C:\\Users\\irisawamasaru\\workspace\\zls\\zig-out\\bin\\zls.exe"
 }
+```
+
+# Zig ファイルを直接実行できる！ (2022-07-10)
+
+　長いシェルは不の遺産。
+
+```sh
+zig run main.zig
 ```
