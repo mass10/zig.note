@@ -11,6 +11,9 @@ fn invoke(handler: fn (u32) void) void {
     handler(0);
 }
 
+/// 文字列を表示するだけの関数
+///
+/// @s 文字列
 fn info(s: []const u8) void {
     _ = std.log.info("[INFO] {s}", .{s});
 }
