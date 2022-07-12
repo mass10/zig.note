@@ -7,16 +7,8 @@ const std = @import("std");
 /// エントリーポイント
 pub fn main() anyerror!void {
 
-    // メモリリーク検出用のアロケータ？
-    // var allocator = std.heap.GeneralPurposeAllocator(.{}){};
-    // defer std.debug.assert(!allocator.deinit());
-
     // 普通のアロケータ
     const allocator = std.heap.page_allocator;
-
-    // テスト用アロケータ？(※ようわからん)
-    // https://ziglang.org/documentation/master/#Report-Memory-Leaks
-    // const allocator = std.testing.allocator;
 
     {
         std.log.debug("========== ArrayList(u32) ==========", .{});
@@ -27,8 +19,6 @@ pub fn main() anyerror!void {
         try list.append(700);
 
         std.log.debug("list: {any}", .{list.items});
-
-        // try std.testing.expect(list.items.len == 3);
     }
 
     {
