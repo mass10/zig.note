@@ -1,3 +1,7 @@
+//!
+//! 高階関数の例
+//!
+
 const std = @import("std");
 
 /// ハンドラーの型宣言
@@ -18,10 +22,14 @@ fn info(s: []const u8) void {
     _ = std.log.info("[INFO] {s}", .{s});
 }
 
+/// 整数を表示するだけの関数
+///
+/// @d 整数
 fn print_digit(d: u32) void {
     _ = std.log.info("[INFO] Digit: ({d})", .{d});
 }
 
+/// エントリーポイントです。
 pub fn main() anyerror!void {
     info("HELLO");
 
