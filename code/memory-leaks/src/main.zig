@@ -30,5 +30,5 @@ pub fn main() !void {
     const u32_ptr = try allocator.create(u32);
     _ = u32_ptr; // コンパイルエラーを回避
 
-    // トレースが出力される
+    // トレースが出力される？？？
 }
