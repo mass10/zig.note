@@ -22,14 +22,14 @@ pub fn main() anyerror!void {
     }
 
     {
-        std.log.debug("========== ArrayList([]u8]) ==========", .{});
+        std.log.debug("========== ArrayList([]const u8) ==========", .{});
         var list = std.ArrayList([]const u8).init(allocator);
         defer list.deinit();
         try list.append("");
         try list.append("1");
         try list.append("Jimmy Page");
 
-        std.log.debug("list: {s}", .{list.items});
+        std.log.debug("list: \"{s}\"", .{list.items});
     }
 
     {
@@ -55,7 +55,7 @@ pub fn main() anyerror!void {
     }
 
     {
-        std.log.debug("========== StringHashMap([]const u8]) ==========", .{});
+        std.log.debug("========== StringHashMap([]const u8) ==========", .{});
         var map = std.StringHashMap([]const u8).init(allocator);
         defer map.deinit();
         try map.put("0", "zero");
