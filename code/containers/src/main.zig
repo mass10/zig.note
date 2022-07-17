@@ -14,6 +14,13 @@ pub fn main() anyerror!void {
     // defer allocator.free();
 
     {
+        std.log.debug("========== Array(i32) ==========", .{});
+        // 要素数を宣言しない Array
+        var values = [_]i32{-900, -3, 0, 1, 2147483647};
+        std.log.debug("list: {any}", .{values});
+    }
+
+    {
         std.log.debug("========== ArrayList(u32) ==========", .{});
         var list = std.ArrayList(u32).init(allocator);
         // TODO: いるの？
