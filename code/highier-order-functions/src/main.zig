@@ -8,7 +8,7 @@ const std = @import("std");
 ///
 /// @param1 u32 パラメーター
 /// @returns 何も返さない
-const HandlerType = fn (param1: u32) void;
+const HandlerType = fn (_: u32) void;
 
 /// 渡された関数を呼び出すだけの関数
 fn invoke(handler: fn (u32) void, param1: u32) void {
@@ -34,8 +34,4 @@ pub fn main() anyerror!void {
     info("HELLO");
 
     invoke(print_digit, 1);
-}
-
-test "basic test" {
-    try std.testing.expectEqual(10, 3 + 7);
 }
