@@ -16,7 +16,7 @@ pub fn main() anyerror!void {
     {
         std.log.debug("========== Array(i32) ==========", .{});
         // 要素数を宣言しない Array
-        var values = [_]i32{-900, -3, 0, 1, 2147483647};
+        var values = [_]i32{ -900, -3, 0, 1, 2147483647 };
         std.log.debug("list: {any}", .{values});
     }
 
@@ -79,7 +79,7 @@ pub fn main() anyerror!void {
 
         var i = map.iterator();
         while (i.next()) |entry| { // entry is called "capture".
-            std.log.debug("map entry: [\"{s}\"]=[\"{s}\"]", .{entry.key_ptr.*, entry.value_ptr.*});
+            std.log.debug("map entry: [\"{s}\"]=[\"{s}\"]", .{ entry.key_ptr.*, entry.value_ptr.* });
         }
     }
 }
