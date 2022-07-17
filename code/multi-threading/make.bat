@@ -1,0 +1,1 @@
+@CALL zig build run
