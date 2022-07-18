@@ -6,13 +6,6 @@
 
 const std = @import("std");
 
-fn getAllocator() std.mem.Allocator {
-    var general_purpose_allocator = std.heap.GeneralPurposeAllocator(.{}){};
-    defer std.debug.assert(!general_purpose_allocator.deinit());
-    const allocator = general_purpose_allocator.allocator();
-    return allocator;
-}
-
 pub fn main() !void {
 
     // 普通のアロケータ
@@ -20,8 +13,10 @@ pub fn main() !void {
 
     // メモリリーク検出用のアロケータ？
     var general_purpose_allocator = std.heap.GeneralPurposeAllocator(.{}){};
+    // このスコープを抜けるときにメモリリークを検証する
     defer std.debug.assert(!general_purpose_allocator.deinit());
     const allocator = general_purpose_allocator.allocator();
+    _ = allocator;
 
     // テスト用アロケータ？(※ようわからん)
     // https://ziglang.org/documentation/master/#Report-Memory-Leaks
