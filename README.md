@@ -34,7 +34,10 @@ zig-out\bin\zls.exe config
 ```
 {
     ...
-    "zigLanguageClient.path": "C:\\Users\\irisawamasaru\\workspace\\zls\\zig-out\\bin\\zls.exe"
+    // deprecated
+    // "zigLanguageClient.path": "C:\\Users\\irisawamasaru\\workspace\\zls\\zig-out\\bin\\zls.exe"
+    // 2022-07-13 New!
+    "zls.path": "C:\\Users\\irisawamasaru\\workspace\\zls\\zig-out\\bin\\zls.exe"
 }
 ```
 
