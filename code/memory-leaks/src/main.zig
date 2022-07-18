@@ -5,7 +5,8 @@
 
 const std = @import("std");
 
-pub fn main() !void {
+/// 検査 その1
+fn example_alloc1() !void {
 
     // 普通のアロケータ
     // const allocator = std.heap.page_allocator;
@@ -24,4 +25,24 @@ pub fn main() !void {
     _ = u32_ptr; // コンパイルエラーを回避
 
     // トレースが出力される？？？
+}
+
+/// 検査 その2
+fn example_alloc2() !void {
+    // 👇リークの検査を勝手にやってくれる、という話だけど、何も出ない。
+    const allocator = std.testing.allocator;
+    const u32_ptr = try allocator.create(u32);
+    _ = u32_ptr;
+}
+
+/// エントリーポイント
+pub fn main() !void {
+    // try example_alloc1();
+    try example_alloc2();
+}
+
+// 自動的に生成されたテストコード
+test "basic test" {
+    // const allocator = std.testing.allocator;
+    try example_alloc2();
 }
