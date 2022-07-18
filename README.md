@@ -48,3 +48,20 @@ zig-out\bin\zls.exe config
 ```sh
 zig run main.zig
 ```
+
+# ビルド
+
+実行する
+```sh
+zig build run
+```
+
+ビルドだけ
+```sh
+zig build
+```
+
+# フォーマット
+```sh
+zig fmt src
+```
