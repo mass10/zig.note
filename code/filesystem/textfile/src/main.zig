@@ -1,9 +1,16 @@
 const std = @import("std");
 
+// const String 
+
+/// ファイル全体を読み込みます。
+///
+/// # Returns
+/// ファイルの内容 TODO: どうやって返す？
 fn readTextFile1(path: []const u8) !void {
     // ダメ
     // const allocator = std.heap.GeneralPurposeAllocator;
     const allocator = std.heap.page_allocator;
+    // const allocator = std.testing.allocator;
 
     // ファイルを開く
     const file = try std.fs.openFileAbsolute(path, .{ .mode = .read_only });
@@ -78,4 +85,10 @@ pub fn main() anyerror!void {
     readTextFile1(absolute_path) catch |err| {
         std.log.err("Unexpected runtime error! reason: {}", .{err});
     };
+}
+
+// 自動的に生成されたテストコード
+test "basic test" {
+    // const allocator = std.testing.allocator;
+    try example_alloc2();
 }
