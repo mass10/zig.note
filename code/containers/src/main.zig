@@ -21,6 +21,14 @@ pub fn main() anyerror!void {
     }
 
     {
+        std.log.debug("========== @Vector(i32) ==========", .{});
+        const v = @Vector(3, i32){ -1, 0, 1 };
+        std.log.debug("list: {any}", .{v});
+        std.log.debug("list: {any}", .{@TypeOf(v)});
+        // TODO: 解放はどうなるの？
+    }
+
+    {
         std.log.debug("========== ArrayList(u32) ==========", .{});
         var list = std.ArrayList(u32).init(allocator);
         // TODO: いるの？
