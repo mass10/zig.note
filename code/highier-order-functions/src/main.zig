@@ -11,8 +11,9 @@ const std = @import("std");
 const HandlerType = fn (_: u32) void;
 
 /// 渡された関数を呼び出すだけの関数
+///
 /// # Arguments
-/// * `handler` HandlerType
+/// * `handler` HandlerType 呼び出す関数
 /// * `param1` 整数
 fn invoke(handler: HandlerType, param1: u32) void {
     handler(param1);
